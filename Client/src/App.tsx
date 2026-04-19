@@ -31,7 +31,8 @@ function App() {
     ]);
 
     try {
-      const res = await fetch("http://localhost:3000/generate", {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+      const res = await fetch(`${backendUrl}/generate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

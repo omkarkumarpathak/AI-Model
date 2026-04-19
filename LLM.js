@@ -31,6 +31,7 @@ app.post("/generate", async (req, res) => {
   return res.status(200).json({ message: response.content });
 });
 
-app.listen(3000, () => {
-  console.log("Server Started");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server Started on port ${PORT}`);
 });
